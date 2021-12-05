@@ -1,0 +1,144 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  font-family: 'Open Sans';
+  height: 100vh;
+  margin-top: 0px !important;
+}
+
+.text-tertiary {
+  color: #c8532c !important;
+}
+
+.btn-secondary {
+  background-color: #fe7b50 !important;
+  border-color: #fe7b50 !important;
+}
+
+.powernav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #6d6d6d;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.powernav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: black !important;
+  display: block !important;
+  font-size: 16px;
+}
+
+.powernav a:hover {
+  color: #f1f1f1 !important;
+}
+
+.main {
+  margin-left: 200px;
+}
+
+/* Jonmari Custom CSS */
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+/*admin default */
+.admin__setup__logo {
+  width: 150px;
+  height: 80px;
+}
+.admin__setup {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e5e5e5;
+}
+/* Jonmari Custom CSS */
+.text-gray {
+  color: #797979;
+}
+.text-orange {
+  color: #fe7b50;
+}
+.text-primary {
+  color: #033f7a !important;
+}
+.text-secondary {
+  color: #fe7b50 !important;
+}
+.text-light {
+  color: #ffffff !important;
+}
+.btn-primary {
+  background-color: #033f7a !important;
+  border-color: #033f7a !important;
+}
+.btn-secondary {
+  background-color: #fe7b50 !important;
+  border-color: #fe7b50 !important;
+}
+.btn-light {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.bg-primary {
+  background-color: #033f7a !important;
+}
+.bg-secondary {
+  background-color: #fe7b50 !important;
+}
+.bg-light {
+  background-color: #ffffff !important;
+}
+.form-check-input:checked {
+  background-color: #fe7b50 !important;
+  border-color: #fe7b50 !important;
+}
+.form-switch.form-switch-sm .form-check-input {
+  height: 1rem;
+  width: calc(1rem + 0.75rem);
+  border-radius: 2rem;
+}
+.form-switch.form-switch-md .form-check-input {
+  height: 1.5rem;
+  width: calc(2rem + 0.75rem);
+  border-radius: 3rem;
+}
+.form-switch.form-switch-lg .form-check-input {
+  height: 2rem;
+  width: calc(3rem + 0.75rem);
+  border-radius: 4rem;
+}
+.form-switch.form-switch-xl .form-check-input {
+  height: 2.5rem;
+  width: calc(4rem + 0.75rem);
+  border-radius: 5rem;
+}
+
+@media screen and (max-height: 450px) {
+  .powernav {
+    padding-top: 15px;
+  }
+  .powernav a {
+    font-size: 18px;
+  }
+}

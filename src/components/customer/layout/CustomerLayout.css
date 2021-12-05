@@ -1,0 +1,17 @@
+/* 
+  Additional CSS file for customer section 
+*/
+
+
+body{
+  position:relative;
+}
+
+/* here we can replace the default root colors to stylise the restaurant's table-ordering */
+
+
+.btn-quantity, .btn-quantity:hover, .btn-quantity:focus{
+  border:0;
+  padding:0;
+  color: var(--tp-blue);
+}

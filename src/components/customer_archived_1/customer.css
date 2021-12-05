@@ -1,0 +1,349 @@
+/*h4 {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+}
+
+
+p {
+    font-size: 14px;
+    font-weight: 400px;
+    color: #000000;
+
+}*/
+.pLargeBold {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.pMediumBold {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000 !important;
+}
+
+.pMediumBoldWhite {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pMediumSemi {
+  font-size: 16px;
+  font-weight: 600 !important;
+  color: black;
+}
+
+.pMedium {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.pMediumWhite {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.defaultInput {
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.inputText {
+  border-radius: '8px';
+  border: '1px solid #000000';
+  color: 'black';
+  font-weight: '600';
+}
+
+.loginInput {
+  padding: 12px 6px 12px 6px;
+}
+
+.input_container {
+  direction: ltr;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.headerParagraph {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.detailParagraph {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 400px;
+}
+
+.smallDetails {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 400;
+}
+
+/* Containers */
+
+.alert-container {
+  padding: 7px;
+}
+.main-container {
+  padding-top: 70px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.receipt-container {
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.customer-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.details-container {
+  margin-top: 20px;
+}
+
+.addOns-container {
+  margin-top: 20px;
+}
+
+.open-check-container {
+  padding: 10px;
+  background: #eceff4;
+  line-height: 0.8;
+}
+
+.card-container {
+  padding: 5px 15px;
+  border: 1px solid #eceff4;
+}
+
+.popular-container {
+  margin: 5px 5px 10px 5px;
+  width: 350px;
+  height: 120px;
+}
+
+.cover-container {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.item {
+  border: 1px solid #000000;
+  width: 250px;
+  margin-right: 10px;
+  padding: 10px;
+  text-overflow: ellipsis;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+.flex-item {
+  flex: 0 0 auto;
+}
+
+.remove-border {
+  border: none !important;
+}
+
+.open-check-container-color {
+  background: #eceff4;
+}
+
+.pay-check-container {
+  padding: 8px;
+  background: #e5e5e5;
+}
+
+.tip-container {
+  display: flex;
+}
+
+.tip-container > .tip-item {
+  padding: 10px 20px;
+  background: #ffffff;
+  margin-right: 25px;
+  border: 1px solid #eceff4;
+}
+
+.tip-item:hover {
+  background: #ebf5ff;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.choices {
+  border-bottom: solid;
+  border-color: #000000;
+  border-width: 1px;
+  padding-top: 10px;
+}
+
+/* Buttons */
+
+.buttonSingle {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.buttonDefault {
+  padding: 16px 8px;
+  width: 100%;
+  height: 56px;
+  font-size: 16px;
+  color: #ffffff;
+  margin: 4px 0px;
+  background: #000000;
+}
+
+.footerBottomButton {
+  position: fixed !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 18px;
+  padding-bottom: 8px;
+  padding-left: 18px;
+  padding-right: 18px;
+  color: #ffffff;
+  text-align: center !important;
+  background-color: #000000;
+}
+/* 
+invoice style */
+.header {
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  width: 100%;
+  padding-left: 10px;
+  z-index: 1;
+}
+
+.header p {
+  margin-left: 10px;
+  padding-top: 12px;
+}
+
+.logoHeaderSmall {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.list li {
+  margin-left: 20px;
+}
+
+/* Borders */
+
+.borderTop {
+  border-top: 1px solid #000000;
+}
+
+.borderAll {
+  border: 1px solid #000000;
+}
+
+/* Line Heights */
+
+.smallLineHeight {
+  line-height: 1.5;
+}
+
+.mediumLineHeight {
+  line-height: 1.5 !important;
+}
+
+.backgroundAlert {
+  background-color: #eceff4;
+}
+
+.loginLink {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*label {
+    font-weight: bold !important;
+    font-size: 16px !important;
+    color:black !important
+}*/
+
+.popular-image {
+  height: 80px;
+  width: 80px;
+  background-color: grey;
+}
+
+.otp-container {
+  width: 57px;
+  height: 75px;
+  margin-right: 10px;
+}
+
+/*HOME CSS*/
+.home-wrapper {
+  justify-content: center;
+  text-align: center;
+  margin: 24px;
+}
+
+.block-container {
+  padding: '12px';
+}
+
+.inputLabel {
+  text-align: left;
+  margin-bottom: 0px !important;
+  color: #868686 !important;
+}
+
+.defaultlink {
+  font-weight: 400;
+}
+
+.footerClass {
+  position: fixed !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  font-size: 16px;
+  font-weight: 600;
+  color: #b3b3b3;
+  text-align: center !important;
+  margin-bottom: 30px;
+}

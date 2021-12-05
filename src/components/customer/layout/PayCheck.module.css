@@ -1,0 +1,40 @@
+.accordion_order {
+  border: 0;
+}
+
+.accordion_order__btn {
+  background: rgba(var(--bs-primary-rgb), 0.2);
+  color: var(--bs-secondary);
+  font-weight: bold;
+}
+
+.accordion_order__btn {
+  border-radius: var(--tp-border-radius) !important;
+}
+.accordion_order__body {
+  background: var(--bs-gray-100);
+  margin-top: -1rem;
+}
+
+.paycheck_border_radius {
+  border-radius: var(--tp-border-radius);
+}
+
+.paycheck_custom {
+  border-radius: var(--tp-border-radius);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.paycheck_btn_tip {
+  border-radius: var(--tp-border-radius);
+  background: transparent;
+  border: 1px solid var(--tp-gray-300);
+  color: var(--tp-gray-300);
+}
+
+.paycheck_btn_tip_format {
+  border-radius: var(--tp-border-radius);
+}

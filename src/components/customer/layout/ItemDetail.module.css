@@ -1,0 +1,27 @@
+
+.itemdetail_content{
+  margin-top:auto;
+  position:relative;
+  background: var(--bs-white);
+    padding-top: 1.25rem;
+    padding-bottom:1.25rem;
+}
+
+@media (max-width:450px){
+  .image_overlay{
+    height: 200px;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    left:0;
+  }
+  .itemdetail_content{
+    margin-top:200px;
+    z-index: 1;
+  }
+  .image_overlay__image{
+    object-fit: cover;
+    height:100%;
+    width:100%;
+  }
+}

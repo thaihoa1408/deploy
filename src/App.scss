@@ -1,0 +1,210 @@
+/**
+  * A single source of truth to obtain Tigerpuff's color palette 
+  * This is a more elegant solution than overwriting existing css.
+  * This should be consistent throughout other tigerpuff platform.
+  * NOTE: we leave other colors default for bootstrap colors unless we decide to define them at a later 
+  * stage. 
+*/ 
+
+// tigerpuff main theme color variables
+$primary  : #FE7B50;
+$secondary: #033F7A;
+
+// secondary main colors 
+$blue  : #58C2F1;
+$orange: #FF8576;
+$green : #47C2B1;
+
+// additional colors 
+$white: #FFFFFF;
+
+// update border radius 
+// we can define this later 
+// $border-radius: .3rem;
+
+
+// gray colors variation 
+// gray don't have to include in the tint and shade method 
+$tp-gray-100: #F0F5F9;
+$tp-gray-200: #C9D6DF;
+$tp-gray-300: #52616B;
+
+$tp-colors: (
+  'primary'  : $primary,
+  'secondary': $secondary,
+  'blue'     : $blue,
+  'orange'   : $orange,
+  'green'    : $green,
+);
+
+$tp-gray: (
+  'gray-100' : $tp-gray-100,
+  'gray-200' : $tp-gray-200,
+  'gray-300' : $tp-gray-300
+);
+$tp-prefix: 'tp';
+
+$tp-primary-colors: (
+  'primary-1' : #FF8576,
+  'primary-2' : #FFC2BB,
+  'primary-3' : #FFDAD6, 
+  'primary-4' : #FFF3F1,
+);
+$tp-secondary-colors: (
+  'secondary-1' :#033F7A,
+  'secondary-2' : #58C2F1,
+  'secondary-3' : #80C2FC,
+  'secondary-4' : #B2DAFD,
+  'secondary-5' : #E5F3FE,
+);
+
+// more rounded border radius.
+$tp-border-radius: .75rem;
+
+// typography selected for headers 
+// Need to properly defined which section should actually use this font 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+// $font-family-base: 'Open sans', sans-serif;
+$font-family-base: 'Open sans', sans-serif;
+@import "~bootstrap/scss/bootstrap";
+
+/**
+* define root colors to use in custom component 
+* example of usage for primary color #hex (color: var(--tp-primary); 
+* example of usage for tint color of primary (color: var(--tp-primary-tint-100;)
+*/ 
+:root {
+  // rgb conversions for managining opacity 
+  // set tint range of 10 
+  @each $color, $value in $tp-colors {
+    --#{$tp-prefix}-#{$color}: #{$value}; 
+    // @for $i from 1 to 9 {
+    //   // tint colors 
+    //   --#{$tp-prefix}-#{$color}-tint-#{$i*100} : #{tint-color($value, $i*10)};
+    //   // shade colors 
+    //   --#{$tp-prefix}-#{$color}-shade-#{$i*100} : #{shade-color($value, $i*10)};
+    //   // opacity values 
+    // }
+  }
+  @each $color, $value in $tp-primary-colors{
+    --#{$tp-prefix}-#{$color}: #{$value};
+  }
+  @each $color, $value in $tp-secondary-colors{
+    --#{$tp-prefix}-#{$color}: #{$value};
+  }
+  @each $color, $value in $tp-gray{
+    --#{$tp-prefix}-#{$color} : #{$value};
+  }
+  // if we neeed to use the main font-family 
+  --#{$tp-prefix}-font-family: 'Montserrat', sans-serif;
+  // border-radius 
+  --#{$tp-prefix}-border-radius: #{$tp-border-radius};
+
+  // test color algo 
+  --tp-test: #{tint-color($primary, 90)}
+}
+// fixed to white for primary color 
+.btn-primary, .btn-primary:hover, .btn-primary:focus{
+  color: $white;
+}
+// include other secondary color buttons 
+.btn-blue{
+  @include button-variant($blue, $blue);
+}
+
+.btn-white{
+  background: $white;
+  border: 1px solid #ced4da;
+}
+
+// tigerpuff background gray color 
+@each $color, $value in $tp-gray { 
+  .bg-#{$color}{
+    background-color: var(--#{$tp-prefix}-#{$color});
+  }
+}
+
+// tigerpuff background primary colors 
+@each $color, $value in $tp-primary-colors {
+  .bg-#{$color}{
+    background-color: var(--#{$tp-prefix}-#{$color});
+  }
+}
+// tigerpuff background secondary colors 
+@each $color, $value in $tp-secondary-colors {
+  .bg-#{$color}{
+    background-color: var(--#{$tp-prefix}-#{$color});
+  }
+}
+
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--#{$tp-prefix}-font-family);
+  // tightly fit
+  letter-spacing: -0.009rem;
+}
+h1,h2{
+  font-weight: 700;
+}
+// if we need to add in montserrat font 
+.font-#{$tp-prefix}{
+  font-family: var(--#{$tp-prefix}-font-family);
+}
+
+// global rounded for TP 
+.tp-rounded{
+  border-radius: var(--#{$tp-prefix}-border-radius);
+}
+// more granular font weight 
+.fw-semibold{
+  font-weight: 600 !important;
+}
+
+html, body, #root{
+  height:100%;
+}
+
+
+// TBD: which section uses this ? 
+.powernav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #6d6d6d;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.powernav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: black !important;
+  display: block !important;
+  font-size: 16px;
+}
+
+.powernav a:hover {
+  color: #f1f1f1 !important;
+}
+
+.main {
+  margin-left: 200px;
+}
+/*admin default */
+.admin__setup__logo {
+  width: 150px;
+  height: 80px;
+}
+.admin__setup {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e5e5e5;
+}
