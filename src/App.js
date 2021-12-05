@@ -63,7 +63,7 @@ export default function App() {
   const powers = { display, setDisplay };
 
   return (
-    <Router>
+    <Router basename='/deploy'>
       <Switch>
         <PowerContext.Provider value={powers}>
           {/* <Route path="/cashier" 	component={Cashier} />
