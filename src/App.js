@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 // import 'antd/dist/antd.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import PowerContext from './context';
 import { useState } from 'react';
@@ -63,7 +63,7 @@ export default function App() {
   const powers = { display, setDisplay };
 
   return (
-    <Router basename='/deploy'>
+    <Router>
       <Switch>
         <PowerContext.Provider value={powers}>
           {/* <Route path="/cashier" 	component={Cashier} />
