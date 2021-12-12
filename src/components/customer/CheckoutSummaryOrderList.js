@@ -2,9 +2,9 @@
  * This is the order list in the checkout summary page
  **/
 
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Button, Form, ListGroup } from "react-bootstrap";
-import { useParams, useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Button, Form, ListGroup } from 'react-bootstrap';
+import { useParams, useHistory } from 'react-router-dom';
 export default function CheckoutoutSummaryOrderList(props) {
   // if it is readonly, we don't display edit
   const isReadOnly = props.readOnly ? props.readOnly : false;
@@ -12,7 +12,7 @@ export default function CheckoutoutSummaryOrderList(props) {
   const renderOptions = (list_modifiers) => {
     if (Array.isArray(list_modifiers) && list_modifiers.length) {
       return (
-        <ul className="list-unstyled mb-0">
+        <ul className='list-unstyled mb-0'>
           {list_modifiers.map((option, index) => {
             return <li key={index}>{option.name}</li>;
           })}
@@ -38,11 +38,11 @@ export default function CheckoutoutSummaryOrderList(props) {
   };
   return Array.isArray(props.orders) && props.orders.length ? (
     <ListGroup
-      variant="flush"
+      variant='flush'
       style={
         !isReadOnly
           ? {
-              paddingBottom: "295px",
+              paddingBottom: '320px',
             }
           : {}
       }
@@ -50,23 +50,23 @@ export default function CheckoutoutSummaryOrderList(props) {
       {/* map the orders  */}
       {props.orders.map((item, index) => {
         return (
-          <ListGroup.Item key={index} className="bg-transparent">
+          <ListGroup.Item key={index} className='bg-transparent'>
             {/* item details */}
-            <div className="d-flex justify-content-between">
+            <div className='d-flex justify-content-between'>
               <div
-                className="d-flex align-items-baseline mb-2"
-                style={{ width: "80%" }}
+                className='d-flex align-items-baseline mb-2'
+                style={{ width: '80%' }}
               >
-                <div className="flex-shrink-0 fw-bold">{item.quantity}x</div>
-                <div className="ms-2 small">
-                  <h6 className="mb-0 text-secondary fw-bold">{item.name}</h6>
+                <div className='flex-shrink-0 fw-bold'>{item.quantity}x</div>
+                <div className='ms-2 small'>
+                  <h6 className='mb-0 text-secondary fw-bold'>{item.name}</h6>
                   {/* modifiers and variants */}
                   {renderOptions(item.modifiers)}
                   {item.variants?.name}
                   {/* special instructions */}
                   {item.special_instructions && (
                     <div>
-                      <span className="text-muted">
+                      <span className='text-muted'>
                         {item.special_instructions}
                       </span>
                     </div>
@@ -76,22 +76,22 @@ export default function CheckoutoutSummaryOrderList(props) {
               {/* total price */}
               <div>
                 {item.price && (
-                  <span className="fw-bold">
+                  <span className='fw-bold'>
                     $
                     {renderPrice(item)
                       .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                   </span>
                 )}
               </div>
             </div>
-            <div className="text-end">
+            <div className='text-end'>
               {!isReadOnly && (
                 <>
                   <a
-                    className="fw-bold text-decoration-none"
+                    className='fw-bold text-decoration-none'
                     style={{
-                      color: "var(--tp-blue)",
+                      color: 'var(--tp-blue)',
                     }}
                     onClick={() => {
                       props.handleEditOrderItem(item.id, item.menu_item_id);
@@ -100,7 +100,7 @@ export default function CheckoutoutSummaryOrderList(props) {
                     Edit
                   </a>
                   <a
-                    className="text-muted fw-bold ms-3 text-decoration-none"
+                    className='text-muted fw-bold ms-3 text-decoration-none'
                     onClick={() => props.handleDeleteOrderItem(item.id)}
                   >
                     Delete

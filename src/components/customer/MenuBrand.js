@@ -3,8 +3,11 @@ import React from 'react';
 function MenuBrand(props) {
   const { logo, background, text, selected, drop } = props;
   return (
-    <div className='container-fluid position-relative mt-0'>
-      <div className='row d-flex align-items-center gx-2 py-2'>
+    <div
+      style={{ height: 68, width: '100%' }}
+      className='container-fluid position-relative mt-0'
+    >
+      <div className='row d-flex align-items-center gx-2 py-2 h-100'>
         <div className='col-4'>
           <div style={{ width: '100%', height: '100%' }}>
             <img
@@ -34,14 +37,13 @@ function MenuBrand(props) {
       </div>
       <img
         style={{
-          width: '100%',
           height: '100%',
+          width: '100%',
           position: 'absolute',
           zIndex: '-1',
           top: 0,
           right: 0,
-          opacity: 0.5,
-          padding: '0 20%',
+          opacity: 0.6,
         }}
         src={background}
         alt=''

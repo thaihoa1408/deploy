@@ -105,7 +105,7 @@ $font-family-base: 'Open sans', sans-serif;
   --tp-test: #{tint-color($primary, 90)}
 }
 // fixed to white for primary color 
-.btn-primary, .btn-primary:hover, .btn-primary:focus{
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary[disabled]{
   color: $white;
 }
 // include other secondary color buttons 

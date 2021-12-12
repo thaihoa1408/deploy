@@ -1,20 +1,18 @@
 import React from 'react';
 import CustomerLayout from '../layout/CustomerLayout';
 import NavbarCust from '../NavbarCust';
-import brand1Img from '../../../assets/images/brand1.png';
-import bgbrand1Img from '../../../assets/images/bgbrand1.png';
-import brand2Img from '../../../assets/images/brand2.png';
-import bgbrand2Img from '../../../assets/images/bgbrand2.png';
-import brand3Img from '../../../assets/images/brand3.png';
-import bgbrand3Img from '../../../assets/images/bgbrand3.png';
-import brand4Img from '../../../assets/images/brand4.png';
-import bgbrand4Img from '../../../assets/images/bgbrand4.png';
-import brand5Img from '../../../assets/images/brand5.png';
-import bgbrand5Img from '../../../assets/images/bgbrand5.png';
 import MenuBrand from '../MenuBrand';
 import { useCustContext } from '../../../CustomerContext';
+import { useHistory } from 'react-router';
 function Brands(props) {
-  const { brands, selectedBrand, handleSelectBrand } = useCustContext();
+  const { brands, selectedBrand, handleSelectBrand, tableInfo } = useCustContext();
+  const history = useHistory();
+  // onclick, it should go back automatically 
+  const clickSelectBrand = (item) =>{
+    handleSelectBrand(item); 
+    // return back 
+    history.goBack();
+  }
   return (
     <div className='position-relative'>
       <div
@@ -26,10 +24,13 @@ function Brands(props) {
           zIndex: '-1',
         }}
       ></div>
-      <NavbarCust goBack />
+      <NavbarCust 
+        goBack
+        title={(tableInfo.location?.name)}
+      />
       {brands.map((item, index) => {
         return (
-          <div key={index} onClick={() => handleSelectBrand(item)}>
+          <div key={index} onClick={() => clickSelectBrand(item)}>
             <MenuBrand
               logo={item.logo?.public_url}
               background={item.cover_photo?.public_url}

@@ -18,12 +18,15 @@ export default function MenuCardList(props) {
   };
   // if there is an order already, return the object
   const getOrder = (id) => {
-    if (!props.orders.length) {
-      return {};
+    if(! props.orders?.id){
+      return {}
     }
-    const order = props.orders.filter((x) => x.id == id);
-    if (order.length) {
-      return order[0];
+    const orderItems = props.orders?.order_items;
+    if(orderItems.length){
+      const order = orderItems.filter((x) => x.menu_item_id == id)
+      if (order.length) {
+        return order;
+      }
     }
     return {};
   };

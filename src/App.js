@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 // import 'antd/dist/antd.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.scss';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import PowerContext from './context';
 import { useState } from 'react';
@@ -54,6 +54,11 @@ import OpenCheckCust from './components/customer/pages/OpenCheck';
 // why are we not using the views to manage routing?
 // import Admin    from './views/admin';
 // import Customer from './views/customer';
+
+// Cashier Views 
+import OrdersCashier from './components/cashier/orders';
+
+
 
 export default function App() {
   const [user, setUser] = useState();
@@ -205,6 +210,9 @@ export default function App() {
             component={PayCheckInvoiceCust}
           />
           <Route exact path='/customer/not-found' component={NotFoundCust} />
+
+          {/* Cashier views */}
+          <Route exact path='/cashier/orders' component={OrdersCashier}/>
         </PowerContext.Provider>
       </Switch>
     </Router>

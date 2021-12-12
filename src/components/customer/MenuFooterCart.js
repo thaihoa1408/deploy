@@ -9,7 +9,7 @@ export default function FooterCart(props) {
   // get the table no and restaurant
   const { table_id } = useParams();
   const history = useHistory();
-  const [total, setTotal] = useState();
+  const [total, setTotal] = useState(0);
   const [amount, setAmount] = useState();
   const { orderItems } = props;
   useEffect(() => {
@@ -39,8 +39,12 @@ export default function FooterCart(props) {
                 </Card.Body>
               </Col>
               <Col xs="5" className="text-end">
+                {/* if order is empty, we shouldn't allow them to checkout  */}
                 <Button
-                  variant="primary"
+                  disabled={!total}
+                  style={(!total) ? {
+                    opacity: 0.5
+                  } : null}
                   onClick={() => {
                     history.push(`/customer/checkout/${table_id}`);
                   }}

@@ -26,7 +26,7 @@ import { getOrderInfo } from '../../../api';
 
 export default function PayCheckInvoice() {
   const history = useHistory();
-  const { restaurant, table } = useParams();
+  const { table_id } = useParams();
   const [amount, setAmount] = useState();
   const [orderSummary, setOrderSummary] = useState([]);
   const [total, setTotal] = useState();
@@ -148,12 +148,6 @@ export default function PayCheckInvoice() {
                   <p style={{ color: '#001B36' }}>
                     Please contact our staffs or
                   </p>
-                  <p
-                    style={{ color: '#0084F8', cursor: 'pointer' }}
-                    onClick={() => history.goBack()}
-                  >
-                    Try again
-                  </p>
                 </div>
               </>
             )}
@@ -192,18 +186,34 @@ export default function PayCheckInvoice() {
               .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
           </div>
         </div>
-        <div className='d-grid gap-2 mt-4'>
-          <Button
-            variant='secondary'
-            size='lg'
-            className={'py-3 ' + styles.paycheck_border_radius}
-            onClick={() => {
-              history.push(`/customer/menu/${restaurant}/${table}`);
-            }}
-          >
-            Order More
-          </Button>
-        </div>
+        {isSuccessful ? (
+          <div className='d-grid gap-2 mt-4'>
+            <Button
+              variant='secondary'
+              size='lg'
+              className={'py-3 ' + styles.paycheck_border_radius}
+              onClick={() => {
+                history.push(`/customer/menu/${table_id}`);
+              }}
+            >
+              Order More
+            </Button>
+          </div>
+        ) : (
+          <div className='d-grid gap-2 mt-4'>
+            <Button
+              variant='secondary'
+              size='lg'
+              className={'py-3 ' + styles.paycheck_border_radius}
+              onClick={() => {
+                history.goBack();
+              }}
+            >
+              Try again
+            </Button>
+          </div>
+        )}
+
         {isSuccessful && (
           <>
             {/* The loyalty point section. */}

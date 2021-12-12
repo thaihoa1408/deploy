@@ -62,7 +62,7 @@ export default function ItemDetail() {
           menu_item_id: parseInt(item_id),
           quantity: itemQuantity,
           name: itemInfo.name,
-          price: itemInfo.price,
+          price: parseFloat(itemInfo.price),
         },
       ],
     };
@@ -75,7 +75,7 @@ export default function ItemDetail() {
     if (groupVariant?.name) {
       formData.order_items[0]['variants'] = {
         name: groupVariant.name,
-        price: groupVariant.price,
+        price: parseFloat(groupVariant.price),
         quantity: itemQuantity,
       };
     } else {
@@ -260,8 +260,12 @@ export default function ItemDetail() {
               onClick={(e) => history.goBack()}
               variant='dark'
               className='rounded-circle ms-3 mt-3'
+              style={{ padding: '0 7px' }}
             >
-              <i className='bi bi-arrow-left-short'></i>
+              <i
+                className='bi bi-arrow-left-short'
+                style={{ fontSize: 30 }}
+              ></i>
             </Button>
           </div>
         </div>

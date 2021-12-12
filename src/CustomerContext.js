@@ -32,7 +32,9 @@ export const CustProvider = ({ children }) => {
     JSON.parse(localStorage.getItem('tableInfo')) || defaultState.tableInfo
   );
   // we will use this at some point, for now, use name from order
-  const [user, setUser] = useState(localStorage.getItem('custUser') || null);
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem('custUser')) || null
+  );
   // global error if table doesn't exist
   const [error, setError] = useState(null);
   // Current Order Detail
@@ -97,6 +99,8 @@ export const CustProvider = ({ children }) => {
         // save state and save to localStorage if we want to access it at a later state
         setOrder(res.data.data.order);
         localStorage.setItem('order', JSON.stringify(res.data.data.order));
+        setUser(formData);
+        localStorage.setItem('custUser', JSON.stringify(formData));
       } else {
         // fail to put
         setOrder(defaultState.order);
@@ -151,6 +155,7 @@ export const CustProvider = ({ children }) => {
   //
   // context values
   const value = {
+    user,
     tableInfo,
     order,
     menu,

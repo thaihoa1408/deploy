@@ -55,7 +55,7 @@ export default function CheckoutSummaryFooter(props) {
           menu_item_id: parseInt(item.id),
           quantity: 1,
           name: item.name,
-          price: item.price,
+          price: parseFloat(item.price),
           modifiers: [],
           variants: {},
         },
@@ -139,7 +139,12 @@ export default function CheckoutSummaryFooter(props) {
                           <div className='position-absolute bottom-0 start-0 w-100 p-3'>
                             <div className='d-flex align-items-center justify-content-between'>
                               <div>
-                                <h5 className='mb-0'>${item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h5>
+                                <h5 className='mb-0'>
+                                  $
+                                  {item.price
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                                </h5>
                               </div>
                               <div
                                 style={{

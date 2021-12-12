@@ -105,7 +105,7 @@ export default function Home(props) {
       // rgb or var values
       bgGradient={'var(--bs-white-rgb)'}
       // coverPhoto={data.location.background_photo}
-      coverPhoto={tableInfo.location.background_photo}
+      //coverPhoto={tableInfo.location.background_photo}
     >
       {/* Should be responsive if user is trying to use other devices instead  */}
       <Container fluid className='h-100'>
